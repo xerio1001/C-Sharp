@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOpdracht24Dario));
             this.TxtLand = new System.Windows.Forms.TextBox();
             this.LblLand = new System.Windows.Forms.Label();
             this.LblHuidigBevolk = new System.Windows.Forms.Label();
@@ -43,7 +44,7 @@
             // TxtLand
             // 
             this.TxtLand.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtLand.Location = new System.Drawing.Point(317, 80);
+            this.TxtLand.Location = new System.Drawing.Point(428, 74);
             this.TxtLand.Name = "TxtLand";
             this.TxtLand.Size = new System.Drawing.Size(185, 32);
             this.TxtLand.TabIndex = 0;
@@ -52,7 +53,7 @@
             // 
             this.LblLand.AutoSize = true;
             this.LblLand.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblLand.Location = new System.Drawing.Point(254, 83);
+            this.LblLand.Location = new System.Drawing.Point(365, 77);
             this.LblLand.Name = "LblLand";
             this.LblLand.Size = new System.Drawing.Size(57, 25);
             this.LblLand.TabIndex = 1;
@@ -62,7 +63,7 @@
             // 
             this.LblHuidigBevolk.AutoSize = true;
             this.LblHuidigBevolk.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblHuidigBevolk.Location = new System.Drawing.Point(92, 121);
+            this.LblHuidigBevolk.Location = new System.Drawing.Point(203, 115);
             this.LblHuidigBevolk.Name = "LblHuidigBevolk";
             this.LblHuidigBevolk.Size = new System.Drawing.Size(219, 25);
             this.LblHuidigBevolk.TabIndex = 3;
@@ -71,7 +72,7 @@
             // TxtHuidigBevolk
             // 
             this.TxtHuidigBevolk.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtHuidigBevolk.Location = new System.Drawing.Point(317, 118);
+            this.TxtHuidigBevolk.Location = new System.Drawing.Point(428, 112);
             this.TxtHuidigBevolk.Name = "TxtHuidigBevolk";
             this.TxtHuidigBevolk.Size = new System.Drawing.Size(185, 32);
             this.TxtHuidigBevolk.TabIndex = 2;
@@ -80,7 +81,7 @@
             // 
             this.LblGroeiPerc.AutoSize = true;
             this.LblGroeiPerc.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblGroeiPerc.Location = new System.Drawing.Point(154, 159);
+            this.LblGroeiPerc.Location = new System.Drawing.Point(265, 153);
             this.LblGroeiPerc.Name = "LblGroeiPerc";
             this.LblGroeiPerc.Size = new System.Drawing.Size(157, 25);
             this.LblGroeiPerc.TabIndex = 5;
@@ -89,24 +90,25 @@
             // TxtGroeiperc
             // 
             this.TxtGroeiperc.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtGroeiperc.Location = new System.Drawing.Point(317, 156);
+            this.TxtGroeiperc.Location = new System.Drawing.Point(428, 150);
             this.TxtGroeiperc.Name = "TxtGroeiperc";
             this.TxtGroeiperc.Size = new System.Drawing.Size(185, 32);
             this.TxtGroeiperc.TabIndex = 4;
             // 
             // TxtResultaat
             // 
+            this.TxtResultaat.Enabled = false;
             this.TxtResultaat.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtResultaat.Location = new System.Drawing.Point(92, 207);
             this.TxtResultaat.Multiline = true;
             this.TxtResultaat.Name = "TxtResultaat";
-            this.TxtResultaat.Size = new System.Drawing.Size(410, 187);
+            this.TxtResultaat.Size = new System.Drawing.Size(521, 187);
             this.TxtResultaat.TabIndex = 6;
             // 
             // BtnBereken
             // 
             this.BtnBereken.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnBereken.Location = new System.Drawing.Point(522, 238);
+            this.BtnBereken.Location = new System.Drawing.Point(641, 231);
             this.BtnBereken.Name = "BtnBereken";
             this.BtnBereken.Size = new System.Drawing.Size(122, 36);
             this.BtnBereken.TabIndex = 7;
@@ -117,7 +119,7 @@
             // BtnWissen
             // 
             this.BtnWissen.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnWissen.Location = new System.Drawing.Point(522, 280);
+            this.BtnWissen.Location = new System.Drawing.Point(641, 273);
             this.BtnWissen.Name = "BtnWissen";
             this.BtnWissen.Size = new System.Drawing.Size(122, 36);
             this.BtnWissen.TabIndex = 8;
@@ -128,7 +130,7 @@
             // BtnSluiten
             // 
             this.BtnSluiten.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnSluiten.Location = new System.Drawing.Point(522, 322);
+            this.BtnSluiten.Location = new System.Drawing.Point(641, 315);
             this.BtnSluiten.Name = "BtnSluiten";
             this.BtnSluiten.Size = new System.Drawing.Size(122, 36);
             this.BtnSluiten.TabIndex = 9;
@@ -151,6 +153,7 @@
             this.Controls.Add(this.TxtHuidigBevolk);
             this.Controls.Add(this.LblLand);
             this.Controls.Add(this.TxtLand);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmOpdracht24Dario";
             this.Text = "Berekening bevolkingsverdubbeling";
             this.ResumeLayout(false);
