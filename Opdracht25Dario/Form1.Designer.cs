@@ -32,7 +32,6 @@
             this.BtnBerekenen = new System.Windows.Forms.Button();
             this.BtnWissen = new System.Windows.Forms.Button();
             this.BtnSluiten = new System.Windows.Forms.Button();
-            this.LblCONTAINER = new System.Windows.Forms.Label();
             this.LblWeekgeld = new System.Windows.Forms.Label();
             this.TxtWeekgeld = new System.Windows.Forms.TextBox();
             this.TxtVerhoging = new System.Windows.Forms.TextBox();
@@ -40,6 +39,8 @@
             this.TxtGewenstBedrag = new System.Windows.Forms.TextBox();
             this.LblGewenstBedrag = new System.Windows.Forms.Label();
             this.TxtResultaat = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnBerekenen
@@ -75,18 +76,11 @@
             this.BtnSluiten.UseVisualStyleBackColor = true;
             this.BtnSluiten.Click += new System.EventHandler(this.BtnSluiten_Click);
             // 
-            // LblCONTAINER
-            // 
-            this.LblCONTAINER.Location = new System.Drawing.Point(273, 152);
-            this.LblCONTAINER.Name = "LblCONTAINER";
-            this.LblCONTAINER.Size = new System.Drawing.Size(386, 139);
-            this.LblCONTAINER.TabIndex = 3;
-            // 
             // LblWeekgeld
             // 
             this.LblWeekgeld.AutoSize = true;
             this.LblWeekgeld.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblWeekgeld.Location = new System.Drawing.Point(390, 171);
+            this.LblWeekgeld.Location = new System.Drawing.Point(132, 21);
             this.LblWeekgeld.Name = "LblWeekgeld";
             this.LblWeekgeld.Size = new System.Drawing.Size(99, 25);
             this.LblWeekgeld.TabIndex = 4;
@@ -95,7 +89,7 @@
             // TxtWeekgeld
             // 
             this.TxtWeekgeld.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtWeekgeld.Location = new System.Drawing.Point(495, 168);
+            this.TxtWeekgeld.Location = new System.Drawing.Point(237, 18);
             this.TxtWeekgeld.Name = "TxtWeekgeld";
             this.TxtWeekgeld.Size = new System.Drawing.Size(150, 32);
             this.TxtWeekgeld.TabIndex = 5;
@@ -103,7 +97,7 @@
             // TxtVerhoging
             // 
             this.TxtVerhoging.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtVerhoging.Location = new System.Drawing.Point(495, 206);
+            this.TxtVerhoging.Location = new System.Drawing.Point(237, 56);
             this.TxtVerhoging.Name = "TxtVerhoging";
             this.TxtVerhoging.Size = new System.Drawing.Size(150, 32);
             this.TxtVerhoging.TabIndex = 7;
@@ -112,7 +106,7 @@
             // 
             this.LblVerhoging.AutoSize = true;
             this.LblVerhoging.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblVerhoging.Location = new System.Drawing.Point(284, 209);
+            this.LblVerhoging.Location = new System.Drawing.Point(26, 59);
             this.LblVerhoging.Name = "LblVerhoging";
             this.LblVerhoging.Size = new System.Drawing.Size(205, 25);
             this.LblVerhoging.TabIndex = 6;
@@ -121,7 +115,7 @@
             // TxtGewenstBedrag
             // 
             this.TxtGewenstBedrag.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtGewenstBedrag.Location = new System.Drawing.Point(495, 244);
+            this.TxtGewenstBedrag.Location = new System.Drawing.Point(237, 94);
             this.TxtGewenstBedrag.Name = "TxtGewenstBedrag";
             this.TxtGewenstBedrag.Size = new System.Drawing.Size(150, 32);
             this.TxtGewenstBedrag.TabIndex = 9;
@@ -130,7 +124,7 @@
             // 
             this.LblGewenstBedrag.AutoSize = true;
             this.LblGewenstBedrag.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblGewenstBedrag.Location = new System.Drawing.Point(290, 247);
+            this.LblGewenstBedrag.Location = new System.Drawing.Point(32, 97);
             this.LblGewenstBedrag.Name = "LblGewenstBedrag";
             this.LblGewenstBedrag.Size = new System.Drawing.Size(199, 25);
             this.LblGewenstBedrag.TabIndex = 8;
@@ -140,11 +134,25 @@
             // 
             this.TxtResultaat.Enabled = false;
             this.TxtResultaat.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtResultaat.Location = new System.Drawing.Point(273, 305);
+            this.TxtResultaat.Location = new System.Drawing.Point(214, 305);
             this.TxtResultaat.Multiline = true;
             this.TxtResultaat.Name = "TxtResultaat";
-            this.TxtResultaat.Size = new System.Drawing.Size(386, 133);
+            this.TxtResultaat.Size = new System.Drawing.Size(445, 133);
             this.TxtResultaat.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.TxtWeekgeld);
+            this.panel1.Controls.Add(this.LblGewenstBedrag);
+            this.panel1.Controls.Add(this.TxtGewenstBedrag);
+            this.panel1.Controls.Add(this.LblWeekgeld);
+            this.panel1.Controls.Add(this.TxtVerhoging);
+            this.panel1.Controls.Add(this.LblVerhoging);
+            this.panel1.Location = new System.Drawing.Point(258, 150);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(401, 144);
+            this.panel1.TabIndex = 11;
             // 
             // FrmOpdracht25Dario
             // 
@@ -155,19 +163,15 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(671, 450);
             this.Controls.Add(this.TxtResultaat);
-            this.Controls.Add(this.TxtGewenstBedrag);
-            this.Controls.Add(this.LblGewenstBedrag);
-            this.Controls.Add(this.TxtVerhoging);
-            this.Controls.Add(this.LblVerhoging);
-            this.Controls.Add(this.TxtWeekgeld);
-            this.Controls.Add(this.LblWeekgeld);
-            this.Controls.Add(this.LblCONTAINER);
             this.Controls.Add(this.BtnSluiten);
             this.Controls.Add(this.BtnWissen);
             this.Controls.Add(this.BtnBerekenen);
+            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmOpdracht25Dario";
             this.Text = "zakgeld berekenen";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,7 +182,6 @@
         private Button BtnBerekenen;
         private Button BtnWissen;
         private Button BtnSluiten;
-        private Label LblCONTAINER;
         private Label LblWeekgeld;
         private TextBox TxtWeekgeld;
         private TextBox TxtVerhoging;
@@ -186,5 +189,6 @@
         private TextBox TxtGewenstBedrag;
         private Label LblGewenstBedrag;
         private TextBox TxtResultaat;
+        private Panel panel1;
     }
 }

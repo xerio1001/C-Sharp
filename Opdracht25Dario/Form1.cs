@@ -23,36 +23,61 @@ namespace Opdracht25Dario
 
         private void BtnBerekenen_Click(object sender, EventArgs e)
         {
-            int weekgeld;
-            int verhoging;
+            double weekgeld;
+            double verhoging;
+            double gewenstBedrag;
+            double totaalBedrag = 0;
             int aantalWeken = 0;
-            int totaalBedrag = 0;
-            int tussenBedrag = 0;
-            int totaalSpaarbedrag = 0;
+            double tussenBedrag = 0;
+            double totaalVerhoging = 0;
+            
 
             try
             {
-                weekgeld = Convert.ToInt16(TxtWeekgeld.Text);
+                weekgeld = Convert.ToDouble(TxtWeekgeld.Text);
             }
             catch
             {
                 MessageBox.Show("Geef een geldige numerieke waarde in.");
+                return;
             }
 
             try
             {
-                verhoging = Convert.ToInt16(TxtVerhoging.Text);
+                verhoging = Convert.ToDouble(TxtVerhoging.Text);
             }
             catch
             {
                 MessageBox.Show("Geef een geldige numerieke waarde in.");
+                return;
             }
 
-            TxtResultaat.Text =
-                "Spaarbedrag na " + aantalWeken.ToString() + " Weken: " + totaalBedrag.ToString("C") + Environment.NewLine +
-                "Extra weekgeld op dat moment: " + tussenBedrag + Environment.NewLine +
-                "Totaal spaargeld: " + totaalSpaarbedrag;
+            try
+            {
+                gewenstBedrag = Convert.ToDouble(TxtGewenstBedrag.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Geef een geldige numerieke waarde in.");
+                return;
+            }
 
+            do
+            {
+                totaalBedrag += weekgeld + verhoging;
+                tussenBedrag += weekgeld;
+                totaalVerhoging += verhoging;
+
+                aantalWeken += 1;
+            }
+            while (totaalBedrag < gewenstBedrag);
+
+            TxtResultaat.Text = 
+                "Na " + aantalWeken.ToString() + " weken heb je: " + tussenBedrag.ToString("C") + Environment.NewLine +
+                Environment.NewLine +
+                "Extra weekgeld verdient op dat moment: " + totaalVerhoging.ToString("C") + Environment.NewLine +
+                Environment.NewLine +
+                "Totaal spaargeld: " + totaalBedrag.ToString("C");
         }
     }
 }
