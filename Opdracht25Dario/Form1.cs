@@ -42,6 +42,7 @@ namespace Opdracht25Dario
                 return;
             }
 
+
             try
             {
                 verhoging = Convert.ToDouble(TxtVerhoging.Text);
@@ -51,6 +52,7 @@ namespace Opdracht25Dario
                 MessageBox.Show("Geef een geldige numerieke waarde in.");
                 return;
             }
+
 
             try
             {
@@ -62,15 +64,19 @@ namespace Opdracht25Dario
                 return;
             }
 
+
+
             do
             {
                 totaalBedrag += weekgeld + verhoging;
                 tussenBedrag += weekgeld;
                 totaalVerhoging += verhoging;
 
-                aantalWeken += 1;
+                aantalWeken++;
             }
             while (totaalBedrag < gewenstBedrag);
+
+
 
             TxtResultaat.Text = 
                 "Na " + aantalWeken.ToString() + " weken heb je: " + tussenBedrag.ToString("C") + Environment.NewLine +

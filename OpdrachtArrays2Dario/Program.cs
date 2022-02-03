@@ -1,4 +1,4 @@
-namespace DebugTest
+namespace OpdrachtArrays2Dario
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace DebugTest
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmDebuggen());
+            Application.Run(new FrmOpdrachtArray2Dario());
         }
     }
 }

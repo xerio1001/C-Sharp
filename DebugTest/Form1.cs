@@ -1,14 +1,15 @@
 namespace DebugTest
 {
-    public partial class Form1 : Form
+    public partial class FrmDebuggen : Form
     {
-        public Form1()
+        public FrmDebuggen()
         {
             InitializeComponent();
         }
 
         private void BtnGo_Click(object sender, EventArgs e)
         {
+            // Dit programma is geschreven om te leren 'debuggen'.
             int i = 0;
 
             do

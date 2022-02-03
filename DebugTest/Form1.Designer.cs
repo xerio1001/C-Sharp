@@ -1,6 +1,6 @@
 ﻿namespace DebugTest
 {
-    partial class Form1
+    partial class FrmDebuggen
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDebuggen));
             this.BtnGo = new System.Windows.Forms.Button();
             this.TxtResultaat = new System.Windows.Forms.TextBox();
+            this.LblTitel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnGo
             // 
             this.BtnGo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnGo.Location = new System.Drawing.Point(381, 162);
+            this.BtnGo.Location = new System.Drawing.Point(131, 105);
             this.BtnGo.Name = "BtnGo";
             this.BtnGo.Size = new System.Drawing.Size(95, 53);
             this.BtnGo.TabIndex = 0;
@@ -46,22 +48,34 @@
             // TxtResultaat
             // 
             this.TxtResultaat.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtResultaat.Location = new System.Drawing.Point(310, 274);
+            this.TxtResultaat.Location = new System.Drawing.Point(58, 179);
             this.TxtResultaat.Multiline = true;
             this.TxtResultaat.Name = "TxtResultaat";
             this.TxtResultaat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TxtResultaat.Size = new System.Drawing.Size(234, 106);
             this.TxtResultaat.TabIndex = 1;
             // 
-            // Form1
+            // LblTitel
+            // 
+            this.LblTitel.AutoSize = true;
+            this.LblTitel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblTitel.Location = new System.Drawing.Point(108, 42);
+            this.LblTitel.Name = "LblTitel";
+            this.LblTitel.Size = new System.Drawing.Size(142, 37);
+            this.LblTitel.TabIndex = 2;
+            this.LblTitel.Text = "Debuggen";
+            // 
+            // FrmDebuggen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(366, 344);
+            this.Controls.Add(this.LblTitel);
             this.Controls.Add(this.TxtResultaat);
             this.Controls.Add(this.BtnGo);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmDebuggen";
+            this.Text = "Debuggen";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -71,5 +85,6 @@
 
         private Button BtnGo;
         private TextBox TxtResultaat;
+        private Label LblTitel;
     }
 }
