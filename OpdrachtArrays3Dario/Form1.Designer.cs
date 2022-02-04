@@ -60,7 +60,7 @@
             // 
             this.LblAantal.AutoSize = true;
             this.LblAantal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblAantal.Location = new System.Drawing.Point(85, 143);
+            this.LblAantal.Location = new System.Drawing.Point(85, 128);
             this.LblAantal.Name = "LblAantal";
             this.LblAantal.Size = new System.Drawing.Size(70, 25);
             this.LblAantal.TabIndex = 3;
@@ -69,17 +69,17 @@
             // TxtResultaat
             // 
             this.TxtResultaat.Enabled = false;
-            this.TxtResultaat.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtResultaat.Location = new System.Drawing.Point(85, 171);
+            this.TxtResultaat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtResultaat.Location = new System.Drawing.Point(85, 156);
             this.TxtResultaat.Multiline = true;
             this.TxtResultaat.Name = "TxtResultaat";
-            this.TxtResultaat.Size = new System.Drawing.Size(298, 248);
+            this.TxtResultaat.Size = new System.Drawing.Size(298, 361);
             this.TxtResultaat.TabIndex = 2;
             // 
             // BtnBereken
             // 
             this.BtnBereken.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnBereken.Location = new System.Drawing.Point(412, 175);
+            this.BtnBereken.Location = new System.Drawing.Point(398, 156);
             this.BtnBereken.Name = "BtnBereken";
             this.BtnBereken.Size = new System.Drawing.Size(131, 40);
             this.BtnBereken.TabIndex = 4;
@@ -90,7 +90,7 @@
             // BtnWissen
             // 
             this.BtnWissen.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnWissen.Location = new System.Drawing.Point(412, 230);
+            this.BtnWissen.Location = new System.Drawing.Point(398, 211);
             this.BtnWissen.Name = "BtnWissen";
             this.BtnWissen.Size = new System.Drawing.Size(131, 40);
             this.BtnWissen.TabIndex = 5;
@@ -101,7 +101,7 @@
             // BtnSluiten
             // 
             this.BtnSluiten.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnSluiten.Location = new System.Drawing.Point(412, 286);
+            this.BtnSluiten.Location = new System.Drawing.Point(398, 267);
             this.BtnSluiten.Name = "BtnSluiten";
             this.BtnSluiten.Size = new System.Drawing.Size(131, 40);
             this.BtnSluiten.TabIndex = 6;
@@ -115,7 +115,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnSluiten;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(604, 551);
             this.Controls.Add(this.BtnSluiten);
             this.Controls.Add(this.BtnWissen);
             this.Controls.Add(this.BtnBereken);
