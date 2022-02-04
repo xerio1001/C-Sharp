@@ -70,6 +70,7 @@ namespace Opdracht25Dario
             {
                 totaalBedrag += weekgeld + verhoging;
                 tussenBedrag += weekgeld;
+
                 totaalVerhoging += verhoging;
 
                 aantalWeken++;

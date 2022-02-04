@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOpdrachtArray2Dario));
             this.TxtResultaat = new System.Windows.Forms.TextBox();
             this.BtnStart = new System.Windows.Forms.Button();
             this.BtnWissen = new System.Windows.Forms.Button();
@@ -36,7 +37,7 @@
             // 
             // TxtResultaat
             // 
-            this.TxtResultaat.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtResultaat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtResultaat.Location = new System.Drawing.Point(48, 37);
             this.TxtResultaat.Multiline = true;
             this.TxtResultaat.Name = "TxtResultaat";
@@ -80,11 +81,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(430, 313);
             this.Controls.Add(this.BtnSluiten);
             this.Controls.Add(this.BtnWissen);
             this.Controls.Add(this.BtnStart);
             this.Controls.Add(this.TxtResultaat);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmOpdrachtArray2Dario";
             this.Text = "Bereking van 6 willekeurige lotto getallen";
             this.ResumeLayout(false);
