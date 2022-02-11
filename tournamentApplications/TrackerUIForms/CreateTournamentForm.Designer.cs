@@ -39,7 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TournamentNameValue = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Lbltitle = new System.Windows.Forms.Label();
+            this.LblHeader = new System.Windows.Forms.Label();
             this.BtnDeleteSelectedPrizes = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.PrizesListBox = new System.Windows.Forms.ListBox();
@@ -149,15 +149,15 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Tournament name";
             // 
-            // Lbltitle
+            // LblHeader
             // 
-            this.Lbltitle.AutoSize = true;
-            this.Lbltitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Lbltitle.Location = new System.Drawing.Point(12, 9);
-            this.Lbltitle.Name = "Lbltitle";
-            this.Lbltitle.Size = new System.Drawing.Size(240, 37);
-            this.Lbltitle.TabIndex = 12;
-            this.Lbltitle.Text = "Create tournament";
+            this.LblHeader.AutoSize = true;
+            this.LblHeader.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblHeader.Location = new System.Drawing.Point(12, 9);
+            this.LblHeader.Name = "LblHeader";
+            this.LblHeader.Size = new System.Drawing.Size(240, 37);
+            this.LblHeader.TabIndex = 12;
+            this.LblHeader.Text = "Create tournament";
             // 
             // BtnDeleteSelectedPrizes
             // 
@@ -227,7 +227,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TournamentNameValue);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Lbltitle);
+            this.Controls.Add(this.LblHeader);
             this.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -251,7 +251,7 @@
         private Label label3;
         private TextBox TournamentNameValue;
         private Label label2;
-        private Label Lbltitle;
+        private Label LblHeader;
         private Button BtnDeleteSelectedPrizes;
         private Label label6;
         private ListBox PrizesListBox;
