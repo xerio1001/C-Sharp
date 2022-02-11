@@ -48,22 +48,22 @@
             // LblHeader
             // 
             this.LblHeader.AutoSize = true;
-            this.LblHeader.Font = new System.Drawing.Font("Segoe UI Light", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblHeader.Location = new System.Drawing.Point(15, 11);
             this.LblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblHeader.Name = "LblHeader";
-            this.LblHeader.Size = new System.Drawing.Size(214, 50);
+            this.LblHeader.Size = new System.Drawing.Size(229, 42);
             this.LblHeader.TabIndex = 0;
             this.LblHeader.Text = "Tournament:";
             // 
             // tournamentName
             // 
             this.tournamentName.AutoSize = true;
-            this.tournamentName.Font = new System.Drawing.Font("Segoe UI Light", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tournamentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tournamentName.Location = new System.Drawing.Point(237, 11);
             this.tournamentName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tournamentName.Name = "tournamentName";
-            this.tournamentName.Size = new System.Drawing.Size(156, 50);
+            this.tournamentName.Size = new System.Drawing.Size(152, 42);
             this.tournamentName.TabIndex = 1;
             this.tournamentName.Text = "<None>";
             // 
@@ -194,6 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(819, 573);
             this.Controls.Add(this.BtnScore);
             this.Controls.Add(this.LblVersus);

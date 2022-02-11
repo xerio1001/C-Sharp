@@ -28,46 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateTeamForm));
             this.TeamNameValue = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LblTeamName = new System.Windows.Forms.Label();
             this.Lbltitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.BtnAddMember = new System.Windows.Forms.Button();
             this.SelectTeamMemberDropDown = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.FirstNameValue = new System.Windows.Forms.TextBox();
-            this.TeamOneScoreLabel = new System.Windows.Forms.Label();
-            this.LastNameValue = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.LblSelectTeamMember = new System.Windows.Forms.Label();
+            this.AddNewMemberBox = new System.Windows.Forms.GroupBox();
+            this.TxtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.LblPhoneNumber = new System.Windows.Forms.Label();
             this.EmailValue = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.LblEmail = new System.Windows.Forms.Label();
+            this.LastNameValue = new System.Windows.Forms.TextBox();
+            this.LblLastName = new System.Windows.Forms.Label();
+            this.FirstNameValue = new System.Windows.Forms.TextBox();
+            this.LblFirstName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnCreateMember = new System.Windows.Forms.Button();
+            this.TeamMembersListBox = new System.Windows.Forms.ListBox();
+            this.BtnDeleteSelectedMember = new System.Windows.Forms.Button();
+            this.BtnCreateTeam = new System.Windows.Forms.Button();
+            this.AddNewMemberBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // TeamNameValue
             // 
             this.TeamNameValue.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TeamNameValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.TeamNameValue.Location = new System.Drawing.Point(153, 123);
+            this.TeamNameValue.Location = new System.Drawing.Point(45, 123);
             this.TeamNameValue.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.TeamNameValue.Name = "TeamNameValue";
-            this.TeamNameValue.Size = new System.Drawing.Size(235, 36);
+            this.TeamNameValue.Size = new System.Drawing.Size(468, 36);
             this.TeamNameValue.TabIndex = 32;
             // 
-            // label2
+            // LblTeamName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.label2.Location = new System.Drawing.Point(188, 81);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 37);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Team Name";
+            this.LblTeamName.AutoSize = true;
+            this.LblTeamName.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblTeamName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.LblTeamName.Location = new System.Drawing.Point(188, 81);
+            this.LblTeamName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblTeamName.Name = "LblTeamName";
+            this.LblTeamName.Size = new System.Drawing.Size(157, 37);
+            this.LblTeamName.TabIndex = 31;
+            this.LblTeamName.Text = "Team Name";
             // 
             // Lbltitle
             // 
@@ -81,159 +86,209 @@
             this.Lbltitle.TabIndex = 30;
             this.Lbltitle.Text = "Create tournament";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(188, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 37);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Create Team";
-            // 
             // BtnAddMember
             // 
+            this.BtnAddMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAddMember.Location = new System.Drawing.Point(188, 289);
             this.BtnAddMember.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.BtnAddMember.Name = "BtnAddMember";
             this.BtnAddMember.Size = new System.Drawing.Size(170, 44);
             this.BtnAddMember.TabIndex = 36;
-            this.BtnAddMember.Text = "Add member";
+            this.BtnAddMember.Text = "Add Member";
             this.BtnAddMember.UseVisualStyleBackColor = true;
             // 
             // SelectTeamMemberDropDown
             // 
             this.SelectTeamMemberDropDown.FormattingEnabled = true;
-            this.SelectTeamMemberDropDown.Location = new System.Drawing.Point(153, 241);
+            this.SelectTeamMemberDropDown.Location = new System.Drawing.Point(127, 241);
             this.SelectTeamMemberDropDown.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.SelectTeamMemberDropDown.Name = "SelectTeamMemberDropDown";
-            this.SelectTeamMemberDropDown.Size = new System.Drawing.Size(235, 38);
+            this.SelectTeamMemberDropDown.Size = new System.Drawing.Size(289, 38);
             this.SelectTeamMemberDropDown.TabIndex = 35;
             // 
-            // label4
+            // LblSelectTeamMember
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(162, 205);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(215, 30);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Select team member";
+            this.LblSelectTeamMember.AutoSize = true;
+            this.LblSelectTeamMember.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblSelectTeamMember.Location = new System.Drawing.Point(162, 205);
+            this.LblSelectTeamMember.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblSelectTeamMember.Name = "LblSelectTeamMember";
+            this.LblSelectTeamMember.Size = new System.Drawing.Size(219, 30);
+            this.LblSelectTeamMember.TabIndex = 34;
+            this.LblSelectTeamMember.Text = "Select Team Member";
             // 
-            // groupBox1
+            // AddNewMemberBox
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.EmailValue);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.LastNameValue);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.FirstNameValue);
-            this.groupBox1.Controls.Add(this.TeamOneScoreLabel);
-            this.groupBox1.Location = new System.Drawing.Point(62, 364);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(417, 258);
-            this.groupBox1.TabIndex = 37;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add new member";
+            this.AddNewMemberBox.Controls.Add(this.BtnCreateMember);
+            this.AddNewMemberBox.Controls.Add(this.TxtPhoneNumber);
+            this.AddNewMemberBox.Controls.Add(this.LblPhoneNumber);
+            this.AddNewMemberBox.Controls.Add(this.EmailValue);
+            this.AddNewMemberBox.Controls.Add(this.LblEmail);
+            this.AddNewMemberBox.Controls.Add(this.LastNameValue);
+            this.AddNewMemberBox.Controls.Add(this.LblLastName);
+            this.AddNewMemberBox.Controls.Add(this.FirstNameValue);
+            this.AddNewMemberBox.Controls.Add(this.LblFirstName);
+            this.AddNewMemberBox.Location = new System.Drawing.Point(45, 392);
+            this.AddNewMemberBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AddNewMemberBox.Name = "AddNewMemberBox";
+            this.AddNewMemberBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AddNewMemberBox.Size = new System.Drawing.Size(468, 273);
+            this.AddNewMemberBox.TabIndex = 37;
+            this.AddNewMemberBox.TabStop = false;
+            this.AddNewMemberBox.Text = "Add new member";
             // 
-            // FirstNameValue
+            // TxtPhoneNumber
             // 
-            this.FirstNameValue.Location = new System.Drawing.Point(126, 29);
-            this.FirstNameValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.FirstNameValue.Name = "FirstNameValue";
-            this.FirstNameValue.Size = new System.Drawing.Size(271, 36);
-            this.FirstNameValue.TabIndex = 39;
+            this.TxtPhoneNumber.Location = new System.Drawing.Point(163, 167);
+            this.TxtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtPhoneNumber.Name = "TxtPhoneNumber";
+            this.TxtPhoneNumber.Size = new System.Drawing.Size(271, 36);
+            this.TxtPhoneNumber.TabIndex = 45;
             // 
-            // TeamOneScoreLabel
+            // LblPhoneNumber
             // 
-            this.TeamOneScoreLabel.AutoSize = true;
-            this.TeamOneScoreLabel.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TeamOneScoreLabel.Location = new System.Drawing.Point(7, 32);
-            this.TeamOneScoreLabel.Name = "TeamOneScoreLabel";
-            this.TeamOneScoreLabel.Size = new System.Drawing.Size(113, 30);
-            this.TeamOneScoreLabel.TabIndex = 38;
-            this.TeamOneScoreLabel.Text = "First name";
-            // 
-            // LastNameValue
-            // 
-            this.LastNameValue.Location = new System.Drawing.Point(126, 73);
-            this.LastNameValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.LastNameValue.Name = "LastNameValue";
-            this.LastNameValue.Size = new System.Drawing.Size(271, 36);
-            this.LastNameValue.TabIndex = 41;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(7, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 30);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Last name";
+            this.LblPhoneNumber.AutoSize = true;
+            this.LblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblPhoneNumber.Location = new System.Drawing.Point(6, 170);
+            this.LblPhoneNumber.Name = "LblPhoneNumber";
+            this.LblPhoneNumber.Size = new System.Drawing.Size(156, 30);
+            this.LblPhoneNumber.TabIndex = 44;
+            this.LblPhoneNumber.Text = "Phone number";
             // 
             // EmailValue
             // 
-            this.EmailValue.Location = new System.Drawing.Point(126, 118);
+            this.EmailValue.Location = new System.Drawing.Point(163, 123);
             this.EmailValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EmailValue.Name = "EmailValue";
             this.EmailValue.Size = new System.Drawing.Size(271, 36);
             this.EmailValue.TabIndex = 43;
             // 
-            // label5
+            // LblEmail
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(53, 121);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 30);
-            this.label5.TabIndex = 42;
-            this.label5.Text = "Email";
+            this.LblEmail.AutoSize = true;
+            this.LblEmail.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblEmail.Location = new System.Drawing.Point(91, 129);
+            this.LblEmail.Name = "LblEmail";
+            this.LblEmail.Size = new System.Drawing.Size(64, 30);
+            this.LblEmail.TabIndex = 42;
+            this.LblEmail.Text = "Email";
             // 
-            // textBox1
+            // LastNameValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 162);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 36);
-            this.textBox1.TabIndex = 45;
+            this.LastNameValue.Location = new System.Drawing.Point(163, 78);
+            this.LastNameValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LastNameValue.Name = "LastNameValue";
+            this.LastNameValue.Size = new System.Drawing.Size(271, 36);
+            this.LastNameValue.TabIndex = 41;
             // 
-            // label6
+            // LblLastName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(16, 165);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(156, 30);
-            this.label6.TabIndex = 44;
-            this.label6.Text = "Phone number";
+            this.LblLastName.AutoSize = true;
+            this.LblLastName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblLastName.Location = new System.Drawing.Point(45, 84);
+            this.LblLastName.Name = "LblLastName";
+            this.LblLastName.Size = new System.Drawing.Size(110, 30);
+            this.LblLastName.TabIndex = 40;
+            this.LblLastName.Text = "Last name";
+            // 
+            // FirstNameValue
+            // 
+            this.FirstNameValue.Location = new System.Drawing.Point(163, 34);
+            this.FirstNameValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FirstNameValue.Name = "FirstNameValue";
+            this.FirstNameValue.Size = new System.Drawing.Size(271, 36);
+            this.FirstNameValue.TabIndex = 39;
+            // 
+            // LblFirstName
+            // 
+            this.LblFirstName.AutoSize = true;
+            this.LblFirstName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblFirstName.Location = new System.Drawing.Point(42, 40);
+            this.LblFirstName.Name = "LblFirstName";
+            this.LblFirstName.Size = new System.Drawing.Size(113, 30);
+            this.LblFirstName.TabIndex = 38;
+            this.LblFirstName.Text = "First name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.label1.Location = new System.Drawing.Point(173, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(204, 45);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Create Team";
+            // 
+            // BtnCreateMember
+            // 
+            this.BtnCreateMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCreateMember.Location = new System.Drawing.Point(143, 213);
+            this.BtnCreateMember.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.BtnCreateMember.Name = "BtnCreateMember";
+            this.BtnCreateMember.Size = new System.Drawing.Size(181, 44);
+            this.BtnCreateMember.TabIndex = 38;
+            this.BtnCreateMember.Text = "Create Member";
+            this.BtnCreateMember.UseVisualStyleBackColor = true;
+            // 
+            // TeamMembersListBox
+            // 
+            this.TeamMembersListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TeamMembersListBox.FormattingEnabled = true;
+            this.TeamMembersListBox.ItemHeight = 30;
+            this.TeamMembersListBox.Location = new System.Drawing.Point(579, 123);
+            this.TeamMembersListBox.Name = "TeamMembersListBox";
+            this.TeamMembersListBox.Size = new System.Drawing.Size(359, 542);
+            this.TeamMembersListBox.TabIndex = 38;
+            // 
+            // BtnDeleteSelectedMember
+            // 
+            this.BtnDeleteSelectedMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeleteSelectedMember.Location = new System.Drawing.Point(955, 358);
+            this.BtnDeleteSelectedMember.Name = "BtnDeleteSelectedMember";
+            this.BtnDeleteSelectedMember.Size = new System.Drawing.Size(126, 73);
+            this.BtnDeleteSelectedMember.TabIndex = 39;
+            this.BtnDeleteSelectedMember.Text = "Delete selected";
+            this.BtnDeleteSelectedMember.UseVisualStyleBackColor = true;
+            // 
+            // BtnCreateTeam
+            // 
+            this.BtnCreateTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCreateTeam.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnCreateTeam.Location = new System.Drawing.Point(457, 708);
+            this.BtnCreateTeam.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.BtnCreateTeam.Name = "BtnCreateTeam";
+            this.BtnCreateTeam.Size = new System.Drawing.Size(181, 44);
+            this.BtnCreateTeam.TabIndex = 40;
+            this.BtnCreateTeam.Text = "Create Team";
+            this.BtnCreateTeam.UseVisualStyleBackColor = true;
             // 
             // CreateTeamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 636);
-            this.Controls.Add(this.groupBox1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1099, 776);
+            this.Controls.Add(this.BtnCreateTeam);
+            this.Controls.Add(this.BtnDeleteSelectedMember);
+            this.Controls.Add(this.TeamMembersListBox);
+            this.Controls.Add(this.AddNewMemberBox);
             this.Controls.Add(this.BtnAddMember);
             this.Controls.Add(this.SelectTeamMemberDropDown);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.LblSelectTeamMember);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TeamNameValue);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LblTeamName);
             this.Controls.Add(this.Lbltitle);
             this.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "CreateTeamForm";
             this.Text = "Create Team";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.AddNewMemberBox.ResumeLayout(false);
+            this.AddNewMemberBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,20 +296,24 @@
 
         #endregion
         private TextBox TeamNameValue;
-        private Label label2;
+        private Label LblTeamName;
         private Label Lbltitle;
-        private Label label1;
         private Button BtnAddMember;
         private ComboBox SelectTeamMemberDropDown;
-        private Label label4;
-        private GroupBox groupBox1;
+        private Label LblSelectTeamMember;
+        private GroupBox AddNewMemberBox;
         private TextBox FirstNameValue;
-        private Label TeamOneScoreLabel;
+        private Label LblFirstName;
         private TextBox LastNameValue;
-        private Label label3;
+        private Label LblLastName;
         private TextBox EmailValue;
-        private Label label5;
-        private TextBox textBox1;
-        private Label label6;
+        private Label LblEmail;
+        private TextBox TxtPhoneNumber;
+        private Label LblPhoneNumber;
+        private Label label1;
+        private Button BtnCreateMember;
+        private ListBox TeamMembersListBox;
+        private Button BtnDeleteSelectedMember;
+        private Button BtnCreateTeam;
     }
 }
