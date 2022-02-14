@@ -56,10 +56,10 @@
             // 
             // PlaceNumberValue
             // 
-            this.PlaceNumberValue.Location = new System.Drawing.Point(205, 77);
+            this.PlaceNumberValue.Location = new System.Drawing.Point(230, 77);
             this.PlaceNumberValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PlaceNumberValue.Name = "PlaceNumberValue";
-            this.PlaceNumberValue.Size = new System.Drawing.Size(271, 35);
+            this.PlaceNumberValue.Size = new System.Drawing.Size(246, 35);
             this.PlaceNumberValue.TabIndex = 41;
             // 
             // LblPlaceNumber
@@ -74,10 +74,10 @@
             // 
             // PlaceNameValue
             // 
-            this.PlaceNameValue.Location = new System.Drawing.Point(205, 120);
+            this.PlaceNameValue.Location = new System.Drawing.Point(230, 120);
             this.PlaceNameValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PlaceNameValue.Name = "PlaceNameValue";
-            this.PlaceNameValue.Size = new System.Drawing.Size(271, 35);
+            this.PlaceNameValue.Size = new System.Drawing.Size(246, 35);
             this.PlaceNameValue.TabIndex = 43;
             // 
             // LblPlaceName
@@ -92,10 +92,10 @@
             // 
             // PrizeAmountValue
             // 
-            this.PrizeAmountValue.Location = new System.Drawing.Point(205, 163);
+            this.PrizeAmountValue.Location = new System.Drawing.Point(230, 163);
             this.PrizeAmountValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PrizeAmountValue.Name = "PrizeAmountValue";
-            this.PrizeAmountValue.Size = new System.Drawing.Size(271, 35);
+            this.PrizeAmountValue.Size = new System.Drawing.Size(246, 35);
             this.PrizeAmountValue.TabIndex = 45;
             // 
             // LblPriceAmount
@@ -147,13 +147,14 @@
             this.BtnCreatePrize.TabIndex = 49;
             this.BtnCreatePrize.Text = "Create Prize";
             this.BtnCreatePrize.UseVisualStyleBackColor = true;
+            this.BtnCreatePrize.Click += new System.EventHandler(this.BtnCreatePrize_Click);
             // 
             // CreatePrizeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(519, 469);
+            this.ClientSize = new System.Drawing.Size(519, 436);
             this.Controls.Add(this.BtnCreatePrize);
             this.Controls.Add(this.LblOr);
             this.Controls.Add(this.PricePercentageValue);
