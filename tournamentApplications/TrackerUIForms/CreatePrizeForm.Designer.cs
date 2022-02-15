@@ -36,7 +36,7 @@
             this.LblPlaceName = new System.Windows.Forms.Label();
             this.PrizeAmountValue = new System.Windows.Forms.TextBox();
             this.LblPriceAmount = new System.Windows.Forms.Label();
-            this.PricePercentageValue = new System.Windows.Forms.TextBox();
+            this.PrizePercentageValue = new System.Windows.Forms.TextBox();
             this.LblPrizePercentage = new System.Windows.Forms.Label();
             this.LblOr = new System.Windows.Forms.Label();
             this.BtnCreatePrize = new System.Windows.Forms.Button();
@@ -97,6 +97,7 @@
             this.PrizeAmountValue.Name = "PrizeAmountValue";
             this.PrizeAmountValue.Size = new System.Drawing.Size(246, 35);
             this.PrizeAmountValue.TabIndex = 45;
+            this.PrizeAmountValue.Text = "0";
             // 
             // LblPriceAmount
             // 
@@ -108,13 +109,14 @@
             this.LblPriceAmount.TabIndex = 44;
             this.LblPriceAmount.Text = "Prize amount";
             // 
-            // PricePercentageValue
+            // PrizePercentageValue
             // 
-            this.PricePercentageValue.Location = new System.Drawing.Point(230, 268);
-            this.PricePercentageValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PricePercentageValue.Name = "PricePercentageValue";
-            this.PricePercentageValue.Size = new System.Drawing.Size(246, 35);
-            this.PricePercentageValue.TabIndex = 47;
+            this.PrizePercentageValue.Location = new System.Drawing.Point(230, 268);
+            this.PrizePercentageValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PrizePercentageValue.Name = "PrizePercentageValue";
+            this.PrizePercentageValue.Size = new System.Drawing.Size(246, 35);
+            this.PrizePercentageValue.TabIndex = 47;
+            this.PrizePercentageValue.Text = "0";
             // 
             // LblPrizePercentage
             // 
@@ -151,13 +153,14 @@
             // 
             // CreatePrizeForm
             // 
+            this.AcceptButton = this.BtnCreatePrize;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(519, 436);
             this.Controls.Add(this.BtnCreatePrize);
             this.Controls.Add(this.LblOr);
-            this.Controls.Add(this.PricePercentageValue);
+            this.Controls.Add(this.PrizePercentageValue);
             this.Controls.Add(this.LblPrizePercentage);
             this.Controls.Add(this.PrizeAmountValue);
             this.Controls.Add(this.LblPriceAmount);
@@ -186,7 +189,7 @@
         private Label LblPlaceName;
         private TextBox PrizeAmountValue;
         private Label LblPriceAmount;
-        private TextBox PricePercentageValue;
+        private TextBox PrizePercentageValue;
         private Label LblPrizePercentage;
         private Label LblOr;
         private Button BtnCreatePrize;
