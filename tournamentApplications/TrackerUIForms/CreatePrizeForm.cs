@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackerLibrary;
+using TrackerLibrary.DataAcces;
+using TrackerLibrary.Models;
 
 namespace TrackerUIForms
 {
@@ -28,10 +30,7 @@ namespace TrackerUIForms
                     PrizeAmountValue.Text, 
                     PrizePercentageValue.Text);
 
-                foreach(IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreatePrize(model);
-                }
+                GlobalConfig.Connection.CreatePrize(model);
 
                 PlaceNameValue.Text = "";
                 PlaceNumberValue.Text = "";
@@ -42,6 +41,7 @@ namespace TrackerUIForms
             else
             {
                 MessageBox.Show("this form has invalid information. Please check it and try again.");
+                PlaceNumberValue.Focus();
             }
         }
 

@@ -36,7 +36,8 @@
             this.SelectTeamMemberDropDown = new System.Windows.Forms.ComboBox();
             this.LblSelectTeamMember = new System.Windows.Forms.Label();
             this.AddNewMemberBox = new System.Windows.Forms.GroupBox();
-            this.TxtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.BtnCreateMember = new System.Windows.Forms.Button();
+            this.PhoneNumberValue = new System.Windows.Forms.TextBox();
             this.LblPhoneNumber = new System.Windows.Forms.Label();
             this.EmailValue = new System.Windows.Forms.TextBox();
             this.LblEmail = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.FirstNameValue = new System.Windows.Forms.TextBox();
             this.LblFirstName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnCreateMember = new System.Windows.Forms.Button();
             this.TeamMembersListBox = new System.Windows.Forms.ListBox();
             this.BtnDeleteSelectedMember = new System.Windows.Forms.Button();
             this.BtnCreateTeam = new System.Windows.Forms.Button();
@@ -120,7 +120,7 @@
             // AddNewMemberBox
             // 
             this.AddNewMemberBox.Controls.Add(this.BtnCreateMember);
-            this.AddNewMemberBox.Controls.Add(this.TxtPhoneNumber);
+            this.AddNewMemberBox.Controls.Add(this.PhoneNumberValue);
             this.AddNewMemberBox.Controls.Add(this.LblPhoneNumber);
             this.AddNewMemberBox.Controls.Add(this.EmailValue);
             this.AddNewMemberBox.Controls.Add(this.LblEmail);
@@ -137,13 +137,25 @@
             this.AddNewMemberBox.TabStop = false;
             this.AddNewMemberBox.Text = "Add new member";
             // 
-            // TxtPhoneNumber
+            // BtnCreateMember
             // 
-            this.TxtPhoneNumber.Location = new System.Drawing.Point(163, 167);
-            this.TxtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TxtPhoneNumber.Name = "TxtPhoneNumber";
-            this.TxtPhoneNumber.Size = new System.Drawing.Size(271, 36);
-            this.TxtPhoneNumber.TabIndex = 45;
+            this.BtnCreateMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCreateMember.Location = new System.Drawing.Point(143, 213);
+            this.BtnCreateMember.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.BtnCreateMember.Name = "BtnCreateMember";
+            this.BtnCreateMember.Size = new System.Drawing.Size(181, 44);
+            this.BtnCreateMember.TabIndex = 38;
+            this.BtnCreateMember.Text = "Create Member";
+            this.BtnCreateMember.UseVisualStyleBackColor = true;
+            this.BtnCreateMember.Click += new System.EventHandler(this.BtnCreateMember_Click);
+            // 
+            // PhoneNumberValue
+            // 
+            this.PhoneNumberValue.Location = new System.Drawing.Point(163, 167);
+            this.PhoneNumberValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PhoneNumberValue.Name = "PhoneNumberValue";
+            this.PhoneNumberValue.Size = new System.Drawing.Size(271, 36);
+            this.PhoneNumberValue.TabIndex = 45;
             // 
             // LblPhoneNumber
             // 
@@ -221,17 +233,6 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Create Team";
             // 
-            // BtnCreateMember
-            // 
-            this.BtnCreateMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCreateMember.Location = new System.Drawing.Point(143, 213);
-            this.BtnCreateMember.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.BtnCreateMember.Name = "BtnCreateMember";
-            this.BtnCreateMember.Size = new System.Drawing.Size(181, 44);
-            this.BtnCreateMember.TabIndex = 38;
-            this.BtnCreateMember.Text = "Create Member";
-            this.BtnCreateMember.UseVisualStyleBackColor = true;
-            // 
             // TeamMembersListBox
             // 
             this.TeamMembersListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -308,7 +309,7 @@
         private Label LblLastName;
         private TextBox EmailValue;
         private Label LblEmail;
-        private TextBox TxtPhoneNumber;
+        private TextBox PhoneNumberValue;
         private Label LblPhoneNumber;
         private Label label1;
         private Button BtnCreateMember;
