@@ -58,7 +58,11 @@ namespace TrackerUIForms
                 p.EmailAddress = EmailValue.Text;
                 p.PhoneNumber = PhoneNumberValue.Text;
 
-                GlobalConfig.Connection.CreatePerson(p);
+                p = GlobalConfig.Connection.CreatePerson(p);
+
+                selectedTeamMembers.Add(p);
+
+                WireUpLists();
 
                 FirstNameValue.Text = "";
                 LastNameValue.Text = "";
@@ -98,15 +102,14 @@ namespace TrackerUIForms
 
         private void BtnAddMember_Click(object sender, EventArgs e)
         {
-            //yt timestamp 9:05:30
             PersonModel p = (PersonModel)SelectTeamMemberDropDown.SelectedItem;
             if (p != null)
             {
                 availableTeamMembers.Remove(p);
                 selectedTeamMembers.Add(p);
-            }
 
-            WireUpLists();
+                WireUpLists();
+            }
         }
 
         private void BtnRemoveSelectedMember_Click(object sender, EventArgs e)
