@@ -40,12 +40,10 @@ namespace TrackerUIForms
         private void WireUpLists()
         {
             SelectTeamMemberDropDown.DataSource = null;
-
             SelectTeamMemberDropDown.DataSource = availableTeamMembers;
             SelectTeamMemberDropDown.DisplayMember = "FullName";
 
             TeamMembersListBox.DataSource = null;
-
             TeamMembersListBox.DataSource = selectedTeamMembers;
             TeamMembersListBox.DisplayMember = "FullName";
         }
