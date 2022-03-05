@@ -13,7 +13,7 @@ namespace TrackerLibrary.DataAcces.TextHelpers
     {
         public static string FullFilePath(this string fileName)
         {
-            return $"{ ConfigurationManager.AppSettings["filePath"]}\\{fileName}";
+            return $"{ ConfigurationManager.AppSettings["filePath"] }\\{ fileName }";
         }
 
         public static List<string> LoadFile(this string file)
@@ -225,7 +225,14 @@ namespace TrackerLibrary.DataAcces.TextHelpers
 
                 MatchupEntryModel me = new MatchupEntryModel();
                 me.Id = int.Parse(cols[0]);
-                me.TeamCompeting = LookupTeamById(int.Parse(cols[1]));
+                if(cols[1].Length == 0)
+                {
+                    me.TeamCompeting = null;
+                }
+                else
+                {
+                    me.TeamCompeting = LookupTeamById(int.Parse(cols[1]));
+                }
                 me.Score = double.Parse(cols[2]);
 
                 int parentId = 0;
@@ -305,13 +312,31 @@ namespace TrackerLibrary.DataAcces.TextHelpers
 
             matchup.Id = currentId;
 
+            matchups.Add(matchup);
+
+            // save to file
+            List<string> lines = new List<string>();
+
+            // id=0, entries=1(pipe delimited by id), winner=2, macthupRound=3
+            foreach (MatchupModel m in matchups)
+            {
+                string winner = "";
+                if (m.Winner != null)
+                {
+                    winner = m.Winner.Id.ToString();
+                }
+                lines.Add($"{m.Id},{""},{winner},{m.MatchupRound}");
+            }
+
+            File.WriteAllLines(GlobalConfig.MatchupFile.FullFilePath(), lines);
+
             foreach (MatchupEntryModel entry in matchup.Entries)
             {
                 entry.SaveEntryToFile(MatchupEntryFile);
             }
 
             // save to file
-            List<string> lines = new List<string>();
+            lines = new List<string>();
 
             // id=0, entries=1(pipe delimited by id), winner=2, macthupRound=3
             foreach (MatchupModel m in matchups)
@@ -351,7 +376,12 @@ namespace TrackerLibrary.DataAcces.TextHelpers
                 {
                     parent = e.ParentMatchup.Id.ToString();
                 }
-                lines.Add($"{e.Id},{e.TeamCompeting.Id},{e.Score},{parent}");
+                string teamCompeting = "";
+                if (e.TeamCompeting != null)
+                {
+                    teamCompeting = e.TeamCompeting.Id.ToString();
+                }
+                lines.Add($"{e.Id},{teamCompeting},{e.Score},{parent}");
             }
 
             File.WriteAllLines(GlobalConfig.MatchupEntryFile.FullFilePath(), lines);
