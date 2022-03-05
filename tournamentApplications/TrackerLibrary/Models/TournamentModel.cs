@@ -10,6 +10,10 @@ namespace TrackerLibrary.Models
     public class TournamentModel
     {
         /// <summary>
+        /// The unique identifier for the tournament
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
         /// Represents the name of the current tournament.
         /// </summary>
         public string TournamentName { get; set; }
