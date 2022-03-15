@@ -18,6 +18,11 @@ namespace TrackerLibrary.Models
         public List<MatchupEntryModel> Entries { get; set; } = new List<MatchupEntryModel>();
 
         /// <summary>
+        /// The Id from the database that will be used to identify the winner.
+        /// </summary>
+        public int WinnerId { get; set; }
+
+        /// <summary>
         /// Represents the winning team of the current tournament.
         /// </summary>
         public TeamModel Winner { get; set; }
@@ -26,5 +31,27 @@ namespace TrackerLibrary.Models
         /// represents the active round of the current tournament.
         /// </summary>
         public int MatchupRound { get; set; }
+
+        public string DisplayName
+        {
+            get
+            {
+                string output = "";
+
+                foreach(MatchupEntryModel me in Entries)
+                {
+                    if (output.Length == 0)
+                    {
+                        output = me.TeamCompeting.TeamName;
+                    }
+                    else
+                    {
+                        output += $" vs. {me.TeamCompeting.TeamName}";
+                    }
+                }
+
+                return output;
+            }
+        }
     }
 }
