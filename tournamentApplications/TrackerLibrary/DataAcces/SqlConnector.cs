@@ -150,20 +150,20 @@ namespace TrackerLibrary.DataAcces
 
                         if (entry.ParentMatchup == null)
                         {
-                            p.Add("@ParentMatchupId", null);
+                            p.Add("@ParentMatchup_id", null);
                         }
                         else
                         {
-                            p.Add("@ParentMatchupId", entry.ParentMatchup.Id);
+                            p.Add("@ParentMatchup_id", entry.ParentMatchup.Id);
                         }
 
                         if (entry.TeamCompeting == null)
                         {
-                            p.Add("@TeamCompetingId", null);
+                            p.Add("@TeamCompeting_id", null);
                         }
                         else
                         {
-                            p.Add("@TeamCompetingId", entry.TeamCompeting.Id);
+                            p.Add("@TeamCompeting_id", entry.TeamCompeting.Id);
                         }
 
                         p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
@@ -245,21 +245,21 @@ namespace TrackerLibrary.DataAcces
 
                         List<TeamModel> allTeams = GetTeam_All();
 
-                        if(m.WinnerId > 0)
+                        if(m.Winner_id > 0)
                         {
-                            m.Winner = allTeams.Where(x => x.Id == m.WinnerId).First();
+                            m.Winner = allTeams.Where(x => x.Id == m.Winner_id).First();
                         }
 
                         foreach (var me in m.Entries)
                         {
-                            if(me.TeamCompetingId > 0)
+                            if(me.TeamCompeting_id > 0)
                             {
-                                me.TeamCompeting = allTeams.Where(x => x.Id == me.TeamCompetingId).First();
+                                me.TeamCompeting = allTeams.Where(x => x.Id == me.TeamCompeting_id).First();
                             }
 
-                            if(me.ParentMatchupId > 0)
+                            if(me.ParentMatchup_id > 0)
                             {
-                                me.ParentMatchup = matchups.Where(x => x.Id == me.ParentMatchupId).First();
+                                me.ParentMatchup = matchups.Where(x => x.Id == me.ParentMatchup_id).First();
                             }
                         }
                     }

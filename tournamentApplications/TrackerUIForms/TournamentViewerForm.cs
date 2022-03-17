@@ -85,7 +85,7 @@ namespace TrackerUIForms
 
         private void LoadMatchup(MatchupModel m)
         {
-            for(int i = 0; i < m.Entries.Count; i++) 
+            for(int i = 0; i < m.Entries.Count; i++)
             {
                 if (i == 0)
                 {

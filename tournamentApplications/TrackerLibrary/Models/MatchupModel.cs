@@ -20,7 +20,7 @@ namespace TrackerLibrary.Models
         /// <summary>
         /// The Id from the database that will be used to identify the winner.
         /// </summary>
-        public int WinnerId { get; set; }
+        public int Winner_id { get; set; }
 
         /// <summary>
         /// Represents the winning team of the current tournament.
