@@ -14,13 +14,16 @@ namespace TrackerUIForms
     public partial class TournamentViewerForm : Form
     {
         private TournamentModel tournament;
-        List<int> rounds = new List<int>();
-        List<MatchupModel> selectedMatchup = new List<MatchupModel>();
+        BindingList<int> rounds = new BindingList<int>();
+        BindingList<MatchupModel> selectedMatchup = new BindingList<MatchupModel>();
+
         public TournamentViewerForm(TournamentModel tournamentModel)
         {
             InitializeComponent();
 
             tournament = tournamentModel;
+
+            WireUpLists();
 
             LoadFormData();
 
@@ -32,19 +35,16 @@ namespace TrackerUIForms
             tournamentName.Text = tournament.TournamentName;
         }
 
-        private void WireUpList()
+        private void WireUpLists()
         {
-            RoundDropDown.DataSource = null;
             RoundDropDown.DataSource = rounds;
-
-            MatchupListbox.DataSource = null;
             MatchupListbox.DataSource = selectedMatchup;
             MatchupListbox.DisplayMember = "DisplayName";
         }
 
         private void LoadRounds()
         {
-            rounds = new List<int>();
+            rounds.Clear();
 
             rounds.Add(1);
             int currRound = 1;
@@ -58,27 +58,71 @@ namespace TrackerUIForms
                 }
             }
 
-            WireUpList();
+            LoadMatchups(1);
         }
 
         private void RoundDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadMatchup();
+            LoadMatchups((int)RoundDropDown.SelectedItem);
         }
 
-        private void LoadMatchup()
+        private void LoadMatchups(int round)
         {
-            int round = (int)RoundDropDown.SelectedItem;
-
             foreach (List<MatchupModel> matchups in tournament.Rounds)
             {
                 if (matchups.First().MatchupRound == round)
                 {
-                    selectedMatchup = matchups;
+                    selectedMatchup.Clear();
+                    foreach (MatchupModel m in matchups)
+                    {
+                        selectedMatchup.Add(m);
+                    }
                 }
             }
 
-            WireUpList();
+            LoadMatchup(selectedMatchup.First());
+        }
+
+        private void LoadMatchup(MatchupModel m)
+        {
+            for(int i = 0; i < m.Entries.Count; i++) 
+            {
+                if (i == 0)
+                {
+                    if(m.Entries[0].TeamCompeting != null)
+                    {
+                        TeamOneName.Text = m.Entries[0].TeamCompeting.TeamName;
+                        TeamOneScoreValue.Text = m.Entries[0].Score.ToString();
+
+                        TeamTwoName.Text = "<bye>";
+                        TeamTwoScoreValue.Text = "";
+                    }
+                    else
+                    {
+                        TeamOneName.Text = "Not yet set";
+                        TeamOneScoreValue.Text = "";
+                    }
+                }
+
+                if (i == 1)
+                {
+                    if (m.Entries[1].TeamCompeting != null)
+                    {
+                        TeamTwoName.Text = m.Entries[1].TeamCompeting.TeamName;
+                        TeamTwoScoreValue.Text = m.Entries[1].Score.ToString();
+                    }
+                    else
+                    {
+                        TeamTwoName.Text = "Not yet set";
+                        TeamTwoScoreValue.Text = "";
+                    }
+                }
+            }
+        }
+
+        private void MatchupListbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadMatchup((MatchupModel)MatchupListbox.SelectedItem);
         }
     }
 }

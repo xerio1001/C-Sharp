@@ -140,6 +140,7 @@
             this.MatchupListbox.Name = "MatchupListbox";
             this.MatchupListbox.Size = new System.Drawing.Size(361, 298);
             this.MatchupListbox.TabIndex = 19;
+            this.MatchupListbox.SelectedIndexChanged += new System.EventHandler(this.MatchupListbox_SelectedIndexChanged);
             // 
             // UnplayedOnlyCheckBox
             // 
