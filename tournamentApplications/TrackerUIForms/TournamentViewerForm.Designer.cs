@@ -57,6 +57,7 @@
             this.BtnScore.TabIndex = 27;
             this.BtnScore.Text = "&Score";
             this.BtnScore.UseVisualStyleBackColor = true;
+            this.BtnScore.Click += new System.EventHandler(this.BtnScore_Click);
             // 
             // LblVersus
             // 
@@ -153,6 +154,7 @@
             this.UnplayedOnlyCheckBox.TabIndex = 18;
             this.UnplayedOnlyCheckBox.Text = "Unplayed only";
             this.UnplayedOnlyCheckBox.UseVisualStyleBackColor = true;
+            this.UnplayedOnlyCheckBox.CheckedChanged += new System.EventHandler(this.UnplayedOnlyCheckBox_CheckedChanged);
             // 
             // RoundDropDown
             // 

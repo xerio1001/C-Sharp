@@ -59,7 +59,7 @@ namespace TrackerUIForms
                 p.EmailAddress = EmailValue.Text;
                 p.PhoneNumber = PhoneNumberValue.Text;
 
-                p = GlobalConfig.Connection.CreatePerson(p);
+                GlobalConfig.Connection.CreatePerson(p);
 
                 selectedTeamMembers.Add(p);
 

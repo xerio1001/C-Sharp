@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrackerLibrary;
 using TrackerLibrary.Models;
 
 namespace TrackerUIForms
@@ -75,12 +76,33 @@ namespace TrackerUIForms
                     selectedMatchup.Clear();
                     foreach (MatchupModel m in matchups)
                     {
-                        selectedMatchup.Add(m);
+                        if (m.Winner == null || !UnplayedOnlyCheckBox.Checked)
+                        {
+                            selectedMatchup.Add(m);
+                        } 
                     }
                 }
             }
+            if (selectedMatchup.Count > 0) 
+            {
+                LoadMatchup(selectedMatchup.First());
+            }
 
-            LoadMatchup(selectedMatchup.First());
+            DisplayMatchupInfo();
+        }
+
+        private void DisplayMatchupInfo()
+        {
+            bool isVisible = selectedMatchup.Count > 0;
+
+            TeamOneName.Visible = isVisible;
+            TeamOneScoreLabel.Visible = isVisible;
+            TeamOneScoreValue.Visible = isVisible;
+            TeamTwoName.Visible = isVisible;
+            TeamTwoScoreLabel.Visible = isVisible;
+            TeamTwoScoreValue.Visible = isVisible;
+            LblVersus.Visible = isVisible;
+            BtnScore.Visible = isVisible;
         }
 
         private void LoadMatchup(MatchupModel m)
@@ -122,7 +144,102 @@ namespace TrackerUIForms
 
         private void MatchupListbox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadMatchup((MatchupModel)MatchupListbox.SelectedItem);
+            if (MatchupListbox.SelectedIndex != -1)
+            {
+                LoadMatchup((MatchupModel)MatchupListbox.SelectedItem);
+            }
+        }
+
+        private void UnplayedOnlyCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadMatchups((int)RoundDropDown.SelectedItem);
+        }
+
+        private bool IsValidData()
+        {
+            bool output = true;
+
+            double teamOneScore = 0;
+            double teamTwoScore = 0;
+
+            bool scoreOneValid = double.TryParse(TeamOneScoreValue.Text, out teamOneScore);
+            bool scoreTwoValid = double.TryParse(TeamTwoScoreValue.Text, out teamTwoScore);
+
+            if (!scoreOneValid || !scoreTwoValid)
+            {
+                output = false;
+            }
+
+            if(teamOneScore == 0 && teamTwoScore == 0)
+            {
+                return false;
+            }
+
+            if(teamOneScore == teamTwoScore)
+            {
+                output = false;
+            }
+
+            return output;
+        }
+
+        private void BtnScore_Click(object sender, EventArgs e)
+        {
+            if (!IsValidData())
+            {
+                MessageBox.Show("You need to enter valid data before we can score this matchup.");
+                return;
+            }
+            MatchupModel m = (MatchupModel)MatchupListbox.SelectedItem;
+            double teamOneScore = 0;
+            double teamTwoScore = 0;
+
+            for (int i = 0; i < m.Entries.Count; i++)
+            {
+                if (i == 0)
+                {
+                    if (m.Entries[0].TeamCompeting != null)
+                    {
+                        bool scoreValid = double.TryParse(TeamOneScoreValue.Text, out teamOneScore);
+                        if (scoreValid)
+                        {
+                            m.Entries[0].Score = teamOneScore;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid score for team 1.");
+                            return;
+                        }
+                    }
+                }
+
+                if (i == 1)
+                {
+                    if (m.Entries[1].TeamCompeting != null)
+                    {
+                        bool scoreValid = double.TryParse(TeamTwoScoreValue.Text, out teamTwoScore);
+                        if (scoreValid)
+                        {
+                            m.Entries[1].Score = teamTwoScore;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid score for team 2.");
+                            return;
+                        }
+                    }
+                }
+            }
+            try
+            {
+                TournamentLogic.UpdateTournamentResults(tournament);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"The application had the following error: {ex.Message}");
+            }
+
+            LoadMatchups((int)RoundDropDown.SelectedItem);
         }
     }
 }
