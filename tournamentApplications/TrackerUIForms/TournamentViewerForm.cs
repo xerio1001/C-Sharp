@@ -24,11 +24,18 @@ namespace TrackerUIForms
 
             tournament = tournamentModel;
 
+            tournament.OnTournamentcomplete += Tournament_OnTournamentcomplete;
+
             WireUpLists();
 
             LoadFormData();
 
             LoadRounds();
+        }
+
+        private void Tournament_OnTournamentcomplete(object? sender, DateTime e)
+        {
+            this.Close();
         }
 
         private void LoadFormData()
@@ -155,9 +162,9 @@ namespace TrackerUIForms
             LoadMatchups((int)RoundDropDown.SelectedItem);
         }
 
-        private bool IsValidData()
+        private string ValidateData()
         {
-            bool output = true;
+            string output = "";
 
             double teamOneScore = 0;
             double teamTwoScore = 0;
@@ -165,19 +172,23 @@ namespace TrackerUIForms
             bool scoreOneValid = double.TryParse(TeamOneScoreValue.Text, out teamOneScore);
             bool scoreTwoValid = double.TryParse(TeamTwoScoreValue.Text, out teamTwoScore);
 
-            if (!scoreOneValid || !scoreTwoValid)
+            if (!scoreOneValid)
             {
-                output = false;
+                output = "The Score One value is not a valid number.";
+            }
+            else if (!scoreTwoValid)
+            {
+                output = "The Score Two value is not a valid number.";
             }
 
-            if(teamOneScore == 0 && teamTwoScore == 0)
+            else if(teamOneScore == 0 && teamTwoScore == 0)
             {
-                return false;
+                return "You did not enter a score for either team.";
             }
 
-            if(teamOneScore == teamTwoScore)
+            else if(teamOneScore == teamTwoScore)
             {
-                output = false;
+                output = "We do not allow ties in this application.";
             }
 
             return output;
@@ -185,9 +196,10 @@ namespace TrackerUIForms
 
         private void BtnScore_Click(object sender, EventArgs e)
         {
-            if (!IsValidData())
+            string errorMessage = ValidateData();
+            if (errorMessage.Length > 0)
             {
-                MessageBox.Show("You need to enter valid data before we can score this matchup.");
+                MessageBox.Show($"Input error: {errorMessage}");
                 return;
             }
             MatchupModel m = (MatchupModel)MatchupListbox.SelectedItem;
@@ -237,6 +249,7 @@ namespace TrackerUIForms
             catch (Exception ex)
             {
                 MessageBox.Show($"The application had the following error: {ex.Message}");
+                return;
             }
 
             LoadMatchups((int)RoundDropDown.SelectedItem);
