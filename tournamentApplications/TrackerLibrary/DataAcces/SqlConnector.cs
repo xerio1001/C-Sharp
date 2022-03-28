@@ -318,7 +318,7 @@ namespace TrackerLibrary.DataAcces
                 var p = new DynamicParameters();
                 p.Add("@id", model.Id);
 
-                connection.Execute("dbo.spTournament_Complete", p, commandType: CommandType.StoredProcedure);
+                connection.Execute("dbo.spTournaments_Complete", p, commandType: CommandType.StoredProcedure);
             }
         }
     }
